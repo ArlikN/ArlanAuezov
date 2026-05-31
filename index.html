@@ -22,13 +22,30 @@
                     <li><a href="#contact" data-i18n="nav-contact">Kontakty</a></li>
                 </ul>
                 
-                <div class="lang-switcher">
-                    <button id="btn-pl" class="lang-btn active" onclick="setLanguage('pl')">PL</button>
-                    <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">EN</button>
-                    <button id="btn-ru" class="lang-btn" onclick="setLanguage('ru')">RU</button>
-                </div>
-            </div>
-        </div>
+<div class="lang-switcher">
+    <button id="btn-pl" class="lang-btn active" onclick="setLanguage('pl')" title="Polski">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" width="24" height="15">
+            <rect width="16" height="5" fill="#fff"/>
+            <rect y="5" width="16" height="5" fill="#dc143c"/>
+        </svg>
+    </button>
+    <button id="btn-en" class="lang-btn" onclick="setLanguage('en')" title="English">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="15">
+            <path fill="#012169" d="M0,0H60V30H0Z"/>
+            <path stroke="#fff" stroke-width="6" d="M0,0,60,30M60,0,0,30"/>
+            <path stroke="#C8102E" stroke-width="2" d="M0,0,60,30M60,0,0,30"/>
+            <path stroke="#fff" stroke-width="10" d="M30,0V30M0,15H60"/>
+            <path stroke="#C8102E" stroke-width="6" d="M30,0V30M0,15H60"/>
+        </svg>
+    </button>
+    <button id="btn-ru" class="lang-btn" onclick="setLanguage('ru')" title="Русский">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" width="24" height="15">
+            <rect width="16" height="3.33" fill="#fff"/>
+            <rect y="3.33" width="16" height="3.33" fill="#0087ff"/>
+            <rect y="6.66" width="16" height="3.34" fill="#fff"/>
+        </svg>
+    </button>
+</div>
     </nav>
 
     <header id="hero" class="hero-section">

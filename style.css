@@ -253,17 +253,38 @@ section h2::after {
 }
 
 /* Красивый внешний вид кнопок языков */
+/* Обновленные стили для кнопок-флагов */
 .lang-btn {
     background-color: transparent;
-    color: #2c3e50;
     border: 1px solid #2c3e50;
     border-radius: 6px;
-    padding: 5px 9px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    padding: 5px 8px; /* Оптимальный отступ под размер флагов */
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Легкое скругление углов у самих флажков внутри кнопок */
+.lang-btn svg {
+    display: block;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Легкая тень, чтобы белый цвет не сливался с фоном */
+}
+
+/* Эффект наведения и активного языка */
+.lang-btn:hover, 
+.lang-btn.active {
+    background-color: #3498db;
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+/* Меняем цвет рамки у флагов при активации, чтобы смотрелось чисто */
+.lang-btn:hover svg,
+.lang-btn.active svg {
+    box-shadow: none;
 }
 
 /* Эффект наведения курсора и активного выбранного языка */
