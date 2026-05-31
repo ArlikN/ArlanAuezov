@@ -63,16 +63,34 @@ html {
     color: #3498db;
 }
 
-/* Главный экран (Hero) */
+/* --- Обновленная секция Hero в style.css --- */
 .hero-section {
     height: 100vh;
-    background: linear-gradient(135deg, #2c3e50, #3498db);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
     padding: 0 20px;
+
+    /* Продвинутый хаотичный фон: */
+    /* 1. Сначала перечисляем картинки (url) от самой верхней к самой нижней. */
+    /* 2. Для каждой картинки настраиваем: no-repeat (чтобы не повторялась). */
+    /* 3. Задаем позицию (проценты по X и Y). */
+    /* 4. Последним слоем ставим базовый градиент. */
+
+    background:
+        /* Иконка 1 (например, GitHub) - вверху слева, размер 60px */
+        url('icon-gh.svg') no-repeat 10% 20% / 60px auto,
+
+        /* Иконка 2 (например, база данных) - по центру справа, размер 80px */
+        url('icon-db.png') no-repeat 85% 50% / 80px auto,
+
+        /* Иконка 3 (например, ноутбук) - внизу слева, размер под размер блока */
+        url('icon-laptop.svg') no-repeat 15% 85% / contain,
+
+        /* Базовый градиент (самый нижний слой, чтобы текст читался) */
+        linear-gradient(135deg, #2c3e50, #3498db);
 }
 
 .hero-content h1 {
