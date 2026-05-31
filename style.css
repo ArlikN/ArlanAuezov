@@ -240,3 +240,44 @@ section h2::after {
         display: none; /* Скрытие меню ссылок на маленьких экранах для чистоты */
     }
 }
+/* Позиционирование ссылок и кнопок в шапке */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Отступ между меню и блоком языков */
+}
+
+.lang-switcher {
+    display: flex;
+    gap: 6px;
+}
+
+/* Красивый внешний вид кнопок языков */
+.lang-btn {
+    background-color: transparent;
+    color: #2c3e50;
+    border: 1px solid #2c3e50;
+    border-radius: 6px;
+    padding: 5px 9px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Эффект наведения курсора и активного выбранного языка */
+.lang-btn:hover, 
+.lang-btn.active {
+    background-color: #3498db;
+    color: #fff;
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+/* Адаптивность для мобильных версий */
+@media (max-width: 768px) {
+    .nav-right {
+        gap: 15px;
+    }
+}
