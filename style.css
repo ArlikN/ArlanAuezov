@@ -1,4 +1,4 @@
-/* Общие стили и обнуление */
+/* Общие стили и сброс дефолтных отступов */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Плавная прокрутка по сайту */
+    scroll-behavior: smooth; /* Плавный скролл при клике на меню */
     font-family: 'Montserrat', sans-serif;
     color: #333;
     background-color: #f9f9f9;
@@ -18,7 +18,7 @@ html {
     padding: 0 20px;
 }
 
-/* Навигационная панель */
+/* Навигационная панель (Navbar) */
 .navbar {
     position: fixed;
     top: 0;
@@ -63,34 +63,16 @@ html {
     color: #3498db;
 }
 
-/* --- Обновленная секция Hero в style.css --- */
+/* Главный экран (Hero) */
 .hero-section {
     height: 100vh;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
     padding: 0 20px;
-
-    /* Продвинутый хаотичный фон: */
-    /* 1. Сначала перечисляем картинки (url) от самой верхней к самой нижней. */
-    /* 2. Для каждой картинки настраиваем: no-repeat (чтобы не повторялась). */
-    /* 3. Задаем позицию (проценты по X и Y). */
-    /* 4. Последним слоем ставим базовый градиент. */
-
-    background:
-        /* Иконка 1 (например, GitHub) - вверху слева, размер 60px */
-        url('icon-gh.svg') no-repeat 10% 20% / 60px auto,
-
-        /* Иконка 2 (например, база данных) - по центру справа, размер 80px */
-        url('icon-db.png') no-repeat 85% 50% / 80px auto,
-
-        /* Иконка 3 (например, ноутбук) - внизу слева, размер под размер блока */
-        url('icon-laptop.svg') no-repeat 15% 85% / contain,
-
-        /* Базовый градиент (самый нижний слой, чтобы текст читался) */
-        linear-gradient(135deg, #2c3e50, #3498db);
 }
 
 .hero-content h1 {
@@ -108,6 +90,7 @@ html {
     opacity: 0.9;
 }
 
+/* Кнопка "O mnie" */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -124,7 +107,7 @@ html {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Стили для секций */
+/* Стили заголовков секций */
 section {
     padding: 80px 0;
 }
@@ -147,7 +130,7 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* Секция "О себе" */
+/* Секция "O mnie" */
 .about-section {
     background-color: #fff;
 }
@@ -170,17 +153,23 @@ section h2::after {
     color: #2c3e50;
 }
 
-.skills-list {
-    list-style: none;
+/* Контейнер иконок и анимация увеличения при наведении (Пункт 5) */
+.skills-icons {
+    display: flex;
+    gap: 25px;
+    font-size: 3.5rem; /* Размер иконок разработчика */
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-.skills-list li {
-    background-color: #f4f6f7;
-    margin-bottom: 10px;
-    padding: 10px 15px;
-    border-left: 4px solid #3498db;
-    font-weight: 600;
-    border-radius: 0 5px 5px 0;
+.icon-box {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-box:hover {
+    transform: scale(1.2); /* Плавное увеличение на 20% */
 }
 
 /* Секция "Контакты" */
@@ -228,7 +217,7 @@ section h2::after {
     font-size: 0.9rem;
 }
 
-/* Подвал */
+/* Подвал (Footer) */
 .footer {
     background-color: #2c3e50;
     color: #fff;
@@ -237,7 +226,7 @@ section h2::after {
     font-size: 0.9rem;
 }
 
-/* Адаптивность для мобильных устройств */
+/* Мобильная адаптивность */
 @media (max-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr;
@@ -248,6 +237,6 @@ section h2::after {
     }
     
     .navbar .nav-links {
-        display: none; /* Упрощение для мобильных, чтобы не кодить бургер-меню */
+        display: none; /* Скрытие меню ссылок на маленьких экранах для чистоты */
     }
 }
